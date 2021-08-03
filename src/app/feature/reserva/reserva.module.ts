@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReservaRoutingModule } from './reserva-routing.module';
 import { CrearReservaComponent } from './components/crear-reserva/crear-reserva.component';
 import { ListarReservaComponent } from './components/listar-reserva/listar-reserva.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 
@@ -13,7 +14,8 @@ import { ListarReservaComponent } from './components/listar-reserva/listar-reser
   ],
   imports: [
     CommonModule,
-    ReservaRoutingModule
+    ReservaRoutingModule,
+    MaterialModule
   ]
 })
 export class ReservaModule { }
