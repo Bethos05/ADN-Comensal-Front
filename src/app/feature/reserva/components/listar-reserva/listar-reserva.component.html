@@ -1,1 +1,58 @@
-<p>listar-reserva works!</p>
+<div class="container">
+    <div>
+        <h3>Lista de reservas</h3>
+    </div>
+    
+    <div>
+      <mat-table [dataSource]="listarReservas | async" class="mat-elevation-z8">
+   
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="dia_reserva">
+          <mat-header-cell *matHeaderCellDef> Dia reserva </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.diaReserva}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="nombre_restaurante">
+          <mat-header-cell *matHeaderCellDef> Restaurante </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.nombreRestaurante}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="identificador_mesa">
+            <mat-header-cell *matHeaderCellDef> Mesa </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.identificadorMesa}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="valor_descuento">
+            <mat-header-cell *matHeaderCellDef> Descuento </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.valorDescuento}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="precio">
+            <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.precio}} </mat-cell>
+        </ng-container>
+
+          <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let element;">
+                <button mat-raised-button color="primary"  matTooltip="Actualizar reserva" [routerLink]="['../reserva/crear']" [queryParams]="element.name" routerLinkActive="active">
+                  Reservar
+              </button>
+            </mat-cell>
+          </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+
+
+
+
+</div>
+<router-outlet></router-outlet>

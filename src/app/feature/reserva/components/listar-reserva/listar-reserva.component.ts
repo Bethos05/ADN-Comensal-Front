@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Reserva } from '@reserva/shared/model/reserva';
+import { ReservaService } from '@reserva/shared/service/reserva.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-reserva',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarReservaComponent implements OnInit {
 
-  constructor() { }
+  public listarReservas: Observable<Reserva[]>;
+  displayedColumns: string[] = ['id', 'dia_reserva', 'nombre_restaurante', 'identificador_mesa', 'valor_descuento', 'precio'];
+  dataSource: any;
+
+  constructor(protected reservaService: ReservaService) { }
 
   ngOnInit(): void {
+    this.listarReservas = this.reservaService.consultar();
   }
 
 }
