@@ -18,6 +18,6 @@ describe('workspace-project Restaurante', () => {
       page.navigateTo();
       toolbar.clickBotonRestaurantes();
 
-      expect(restaurante.contarRestaurante()).toBe(1);
+      expect(restaurante.contarRestaurante()).toBe(2);
     });
 });
