@@ -49,6 +49,12 @@ pipeline {
       }
     }
 
+    // stage('test') {
+    //   steps {
+    //     sh 'ng test'
+    //   }
+    // }
+
     stage('Static Code Analysis') {
       steps{
           echo '------------>Análisis de código estático<------------'
