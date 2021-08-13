@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular Seed');
+    expect(page.getTitleText()).toEqual('Comen-Sal la aplicación que te permite gestionar las reservas de los restaurantes registrados.');
   });
 
   afterEach(async () => {

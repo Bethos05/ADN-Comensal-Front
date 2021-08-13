@@ -2,20 +2,20 @@
     <div>
         <h1>Lista de reservas</h1>
     </div>
-    
+
     <div>
       <mat-table [dataSource]="listarReservas | async" class="mat-elevation-z8">
-   
+
         <ng-container matColumnDef="id">
           <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
         </ng-container>
-      
+
         <ng-container matColumnDef="dia_reserva">
           <mat-header-cell *matHeaderCellDef> Dia reserva </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.diaReserva}} </mat-cell>
         </ng-container>
-      
+
         <ng-container matColumnDef="nombre_restaurante">
           <mat-header-cell *matHeaderCellDef> Restaurante </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nombreRestaurante}} </mat-cell>
@@ -46,7 +46,7 @@
           </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-row id='reserva-row'*matRowDef="let row; columns: displayedColumns;"></mat-row>
       </mat-table>
     </div>
 </div>
