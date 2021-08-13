@@ -1,7 +1,9 @@
-<mat-toolbar color = 'accent'>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
+<mat-toolbar color = 'accent' class="navbar">
+  
     <span>Comen-Sal</span>
     <span class="example-spacer"></span>
+
+    <nav class="nav-buttons" color='primary' >
+      <a *ngFor="let item of items" [routerLink]="item.url" routerLinkActive="active">{{item.nombre}}</a>
+    </nav>
 </mat-toolbar>

@@ -1,1 +1,67 @@
-<p>crear-reserva works!</p>
+<form [formGroup]="formReserva" (ngSubmit)="crear()">
+
+    <mat-card class="example-card">
+
+      <mat-card-header>
+        <mat-card-title>Restaurante: {{restaurante.nombre}}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="contenido">
+
+        <mat-form-field>
+          <mat-label>Mesa</mat-label>
+          <mat-select [(ngModel)]="selectedValue" formControlName="mesa" id="mesa" name="mesa">
+            <mat-option *ngFor="let mesa of restaurante.mesas" [value]="mesa.identificador">
+              {{mesa.identificador}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="formReserva.controls.tipo.errors?.required">
+            El tipo es un campo <strong>requerido</strong>
+          </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="datepicker" formControlName="fecha" id="fecha" name="fecha">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+          <!-- <mat-error *ngIf="formReserva.controls.fecha.errors?.required">
+            La fecha es un campo <strong>requerido</strong>
+          </mat-error> -->
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Codigo descuento</mat-label>
+          <input matInput placeholder="Codigo descuento"  formControlName="codigo" id="codigo" name="codigo">
+          <!-- <mat-error *ngIf="formReserva.controls.codigo.errors?.required">
+            Cedula del emisor es <strong>requerida</strong>
+          </mat-error> -->
+        </mat-form-field>
+
+        <label class="label">Precio reserva: {{restaurante.precioReserva}}</label>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button type="submit" [color]="formReserva.valid?'primary':'warn'" [disabled]="!formReserva.valid">Crear</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+</form>
+
+
+
+
+<!-- private LocalDate diaReserva;
+private ComandoRestaurante restaurante;
+private ComandoMesa mesa;
+private BigDecimal precio;
+private ComandoDescuento descuento; -->

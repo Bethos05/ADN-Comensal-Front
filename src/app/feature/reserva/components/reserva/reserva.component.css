@@ -1,0 +1,19 @@
+.active {
+    border-bottom: 1px solid black;
+}
+
+.nav {
+    display: flex;
+    font: 100 Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    margin-right: 1rem;
+}
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+}

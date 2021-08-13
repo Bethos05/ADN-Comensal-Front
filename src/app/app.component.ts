@@ -10,10 +10,9 @@ import { MenuItem } from '@core/modelo/menu-item';
 export class AppComponent {
   title = 'app-base';
   public companies: MenuItem[] = [
-    { url: '/home', nombre: 'home' },
-    { url: '/producto', nombre: 'producto' },
-    { url: '/reserva', nombre: 'reserva' }
-
+    { url: '/home', nombre: 'Home' },
+    { url: '/reservas', nombre: 'Reservas' },
+    { url: '/restaurantes', nombre: 'Restaurantes' }
   ];
 
 

@@ -18,6 +18,7 @@ export class ListarReservaComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarReservas = this.reservaService.consultar();
+    this.listarReservas.subscribe(valule => console.log(valule));
   }
 
 }

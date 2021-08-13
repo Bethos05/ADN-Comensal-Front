@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuItem } from '@core/modelo/menu-item';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+
+  @Input()
+  items: MenuItem[];
 
   constructor() { }
 

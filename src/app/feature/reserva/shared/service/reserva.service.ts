@@ -11,4 +11,8 @@ export class ReservaService {
   public consultar() {
     return this.http.doGet<Reserva[]>(`${environment.endpoint}/reservas`, this.http.optsName('consultar reservas'));
   }
+
+  public guardar(reserva: any){
+    return this.http.doPost<any, number>(`${environment.endpoint}/reservas`, reserva);
+  }
 }
