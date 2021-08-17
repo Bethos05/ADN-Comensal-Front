@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Crear Mesa</h2>
+  <form [formGroup]="mesaForm">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Identificador</mat-label>
+      <input matInput formControlName="identificador" />
+      <mat-error *ngIf="mesaForm.get('identificador').errors?.required"
+        >El identificador es requerido</mat-error
+      >
+    </mat-form-field>
+  </form>
+  <button
+    mat-flat-button
+    (click)="crearMesa()"
+    [color]="mesaForm?.valid ? 'primary' : 'danger'"
+    [disabled]="!mesaForm?.valid"
+  >
+    Crear
+  </button>
+</div>
+

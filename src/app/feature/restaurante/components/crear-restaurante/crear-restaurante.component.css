@@ -1,0 +1,46 @@
+form {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; }
+
+.mat-card {
+width: 25vw;
+}
+
+.mat-card-header {
+justify-content: center;
+}
+
+.mat-card-actions {
+display: flex;
+justify-content: center;
+}
+
+.mat-form-field {
+display: flex;
+justify-content: center;
+}
+
+.label{
+display: flex;
+justify-content: center;
+font-size: 18px;
+margin-top: 20px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+
+input[type="number"] {
+-moz-appearance: textfield;
+}
+
+.contenido {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: center;
+}

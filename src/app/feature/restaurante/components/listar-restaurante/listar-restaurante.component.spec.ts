@@ -8,6 +8,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ListarRestauranteComponent } from './listar-restaurante.component';
 import { HttpService } from '@core/services/http.service';
 import { of } from 'rxjs';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MesaService } from 'src/app/feature/mesa/shared/service/mesa.service';
+import { DescuentoService } from 'src/app/feature/descuento/shared/services/descuento.service';
 
 describe('ListarRestauranteComponent', () => {
   let component: ListarRestauranteComponent;
@@ -25,9 +28,10 @@ describe('ListarRestauranteComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
-        RouterTestingModule
+        RouterTestingModule,
+        MatDialogModule
       ],
-      providers: [RestauranteService, HttpService]
+      providers: [RestauranteService, MesaService, DescuentoService, HttpService, MatDialog]
     })
     .compileComponents();
   });
@@ -44,7 +48,7 @@ describe('ListarRestauranteComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    component.listarRestaurante.subscribe(resultado =>{
+    component.listarRestaurante.subscribe(resultado => {
       expect(resultado.length).toBe(2);
     });
   });

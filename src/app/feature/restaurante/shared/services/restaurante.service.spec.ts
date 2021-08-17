@@ -4,6 +4,7 @@ import { RestauranteService } from './restaurante.service';
 import { environment } from 'src/environments/environment';
 import { HttpService } from '@core/services/http.service';
 import { Restaurante } from '../model/restaurante';
+import { HttpResponse } from '@angular/common/http';
 
 describe('RestauranteService', () => {
   let httpMock: HttpTestingController;
@@ -36,6 +37,21 @@ describe('RestauranteService', () => {
     const req = httpMock.expectOne(apiEndpointRestaurante);
     expect(req.request.method).toBe('GET');
     req.flush(dummyRestaurantes);
+  });
+
+  it('deberia crear un restaurante', () => {
+    const dummyRestaurante = {
+      nombre: 'prueba',
+      precioReserva: 50000,
+      mesas: []
+    };
+
+    service.guardar(dummyRestaurante).subscribe((respuesta) => {
+      expect(respuesta).toEqual(1);
+    });
+    const req = httpMock.expectOne(apiEndpointRestaurante);
+    expect(req.request.method).toBe('POST');
+    req.event(new HttpResponse<number>({body: 1}));
   });
 
 

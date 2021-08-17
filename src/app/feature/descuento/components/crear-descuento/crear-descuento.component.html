@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Crear Descuento</h2>
+  <form [formGroup]="descuentoForm">
+
+
+    <mat-form-field>
+      <mat-label>Codigo</mat-label>
+      <input matInput placeholder="codigo" required formControlName="codigo" id="codigo" name="codigo">
+      <mat-error *ngIf="descuentoForm.controls.codigo.errors?.required">
+        El codigo es <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Valor Descuento</mat-label>
+      <input matInput type="number" placeholder="Ej: 35999" required formControlName="valorDescuento" id="valorDescuento" name="valorDescuento">
+      <mat-error *ngIf="descuentoForm.controls.valorDescuento.errors?.required">
+        El valor es un campo <strong>requerido</strong>
+      </mat-error>
+      <mat-error *ngIf="descuentoForm.controls.valorDescuento.errors?.min">
+        El valor minimo es <strong>0</strong>
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+  <button
+    mat-flat-button
+    (click)="crearDescuento()"
+    [color]="descuentoForm?.valid ? 'primary' : 'danger'"
+    [disabled]="!descuentoForm?.valid"
+  >
+    Crear
+  </button>
+</div>

@@ -32,7 +32,7 @@ module.exports = function (config) {
     htmlReporter: {
       outputFile: 'reports/unit/units.html',
 
-      // Optional 
+      // Optional
       pageTitle: 'Vida - Tests Unitarios',
       subPageTitle: 'Presentacion HTML de los test unitarios',
       dir: 'reports/html/'
@@ -47,7 +47,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });

@@ -25,9 +25,16 @@
           <ng-container matColumnDef="acciones">
             <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
             <mat-cell *matCellDef="let element;">
-                <button id="reservar" mat-raised-button color="primary"  matTooltip="Actualizar reserva" (click)="enviarInformacion(element)"  routerLinkActive="active">
-                  Reservar
+                <button id="reservar" class="accion_button" mat-mini-fab color="primary"  matTooltip="Crear Reserva" (click)="enviarInformacion(element)"  routerLinkActive="active">
+                  <mat-icon>book</mat-icon>
                 </button>
+                <button id="addDescuento" class="accion_button" mat-mini-fab color="primary"  matTooltip="Añadir descuento" (click)="crearDescuento(element.nombre)">
+                  <mat-icon> attach_money</mat-icon>
+                </button>
+                <button id="addMesa" class="accion_button" mat-mini-fab color="primary"  matTooltip="Añadir descuento" (click)="crearMesa(element.nombre)">
+                  <mat-icon>add_circle</mat-icon>
+                </button>
+
             </mat-cell>
           </ng-container>
 

@@ -12,4 +12,8 @@ export class RestauranteService {
     return this.http.doGet<Restaurante[]>(`${environment.endpoint}/restaurantes`, this.http.optsName('consultar restaurantes'));
   }
 
+  public guardar(restaurante: any){
+    return this.http.doPost<any, number>(`${environment.endpoint}/restaurantes`, restaurante);
+  }
+
 }

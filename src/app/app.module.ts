@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReservaModule } from '@reserva/reserva.module';
 import { RestauranteModule } from './feature/restaurante/restaurante.module';
 import { FormsModule } from '@angular/forms';
+import { MesaModule } from './feature/mesa/mesa.module';
+import { DescuentoModule } from './feature/descuento/descuento.module';
 
 
 
@@ -27,6 +29,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReservaModule,
     RestauranteModule,
+    MesaModule,
+    DescuentoModule,
     FormsModule
   ],
   providers: [CookieService],
